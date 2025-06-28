@@ -1,0 +1,7 @@
+## Interface: 30300
+## Title: DromsInstanceTimer
+## Notes: Tracks instance entries for the 50/hour limit
+## Author: Drom
+## Version: 1.0
+## SavedVariables: DromsInstanceTimerDB, DromsInstanceTimerOptions
+DromsInstanceTimer.lua
