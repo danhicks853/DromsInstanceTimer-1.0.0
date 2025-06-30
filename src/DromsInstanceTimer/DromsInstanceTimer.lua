@@ -63,11 +63,15 @@ local function cleanup()
     local now = time()
     local newEntries = {}
     for _, t in ipairs(instanceEntries) do
-        if now - t < ROLLING_WINDOW then
+        t = tonumber(t) -- ensure t is a number
+        if t and now - t < ROLLING_WINDOW then
             table.insert(newEntries, t)
         end
     end
-    instanceEntries = newEntries
+    wipe(instanceEntries)
+    for _, t in ipairs(newEntries) do
+        table.insert(instanceEntries, t)
+    end
 end
 
 -- Helper: Update UI
